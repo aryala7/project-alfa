@@ -34,9 +34,9 @@ class HomeController extends Controller
     }
 
     public function MainPage(){
-        $resume = null;
+        $resume = Experinces::all();
         return view('index')->with([
-            'me'=>'s',
+            'me'=>User::find(1),
             'resume_items'=>$resume
         ]);
     }
