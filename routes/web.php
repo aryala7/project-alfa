@@ -70,6 +70,7 @@ Route::group([
     });
     
 });
+
 Route::post('/1372300109:AAHr9qgFQjaIJE9sj-iYYcBUAW_KHnPGSfk/webhook','TelegramController@sendMessage');
 Route::post('/start','TelegramController@sendMessage');
 

@@ -9,6 +9,7 @@
         </div>
 
         <div class="row">
+
             @forelse($blogs as $blog)
             <div class="col-sm-6 col-lg-4 mb-4">
                 <div class="blog-entry">
@@ -24,9 +25,10 @@
                     </div>
                 </div>
             </div>
+
             @empty
             @endforelse
-        
+      
         </div>
     </div>
 </section>

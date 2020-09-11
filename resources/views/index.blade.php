@@ -87,6 +87,7 @@
 						<a href="#" class="social-item"><span class="icon-instagram2"></span></a>
 						<a href="#" class="social-item"><span class="icon-linkedin2"></span></a>
 						{{-- <a href="#" class="social-item"><span class="icon-vimeo"></span></a> --}}
+
 					</p>
 				</div>
 			</div>

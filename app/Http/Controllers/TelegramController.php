@@ -9,8 +9,7 @@ class TelegramController extends Controller
 {
 
     public function sendMessage(){
-        $response = Telegram::setWebhook(['url' => config('telegram.bots.mybot.webhook_url')]);
-        
+        $response = Telegram::setWebhook(['url' => config('telegram.bots.mybot.webhook_url')]);        
         $updates = Telegram::getWebhookUpdates();
         // $message_id=$updates['message']['id'];
         $text = $updates['message']['text'];
@@ -44,8 +43,6 @@ class TelegramController extends Controller
                 // 'reply_markup'=>$reply_markup
             ]);
         }
-        
-
     }
     //
 }

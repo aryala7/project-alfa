@@ -30,7 +30,9 @@
                         <textarea name="message" class="form-control px-3 py-4"cols="30" rows="10" placeholder="Write a Message"></textarea>
                     </div>
                     <div class="form-group">
+
                         <input type="button" class="btn btn-primary submitBtn  px-4 py-3" value="Send Message">
+
                     </div>
                 </form>
             </div>

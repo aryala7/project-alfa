@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Blog;
 use App\Contact;
 use App\Experinces;
@@ -54,7 +55,7 @@ class HomeController extends Controller
     public function send(Request $request){
         $request->validate([
             'email'=>'email',
-            // 'cellphone'=>'digits:11',
+            'cellphone'=>'digits:11',
             'message'=>'required|max:120'
         ]);
         Contact::create($request->only([
