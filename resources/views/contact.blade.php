@@ -7,9 +7,14 @@
                     <h2>Get <strong>In Touch</strong></h2>
                 </div>
             </div>
+            <div class="col-md-12 mb-5">
+                
+                 <p dir="ltr" class="contactUs-response d-none"></p>
+               
+            </div>
 
             <div class="col-md-7 mb-5 mb-md-0">
-                <form action="{{route('contact')}}" method="post" class="site-form">
+                <form action="{{route('contact')}}" method="post" id="contactUs_form" class="site-form">
                     @csrf
                     <h3 class="mb-5">Get In Touch</h3>
                     <div class="form-group">
@@ -25,7 +30,9 @@
                         <textarea name="message" class="form-control px-3 py-4"cols="30" rows="10" placeholder="Write a Message"></textarea>
                     </div>
                     <div class="form-group">
-                        <input type="submit" class="btn btn-primary  px-4 py-3" value="Send Message">
+
+                        <input type="button" class="btn btn-primary submitBtn  px-4 py-3" value="Send Message">
+
                     </div>
                 </form>
             </div>

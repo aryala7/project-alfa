@@ -82,11 +82,12 @@
 			<div class="row mb-5">
 				<div class="col-md-12 text-center">
 					<p>
-						<a href="#" class="social-item"><span class="icon-facebook2"></span></a>
-						<a href="#" class="social-item"><span class="icon-twitter"></span></a>
+						{{-- <a href="#" class="social-item"><span class="icon-facebook2"></span></a> --}}
+						{{-- <a href="#" class="social-item"><span class="icon-twitter"></span></a> --}}
 						<a href="#" class="social-item"><span class="icon-instagram2"></span></a>
 						<a href="#" class="social-item"><span class="icon-linkedin2"></span></a>
-						<a href="#" class="social-item"><span class="icon-vimeo"></span></a>
+						{{-- <a href="#" class="social-item"><span class="icon-vimeo"></span></a> --}}
+
 					</p>
 				</div>
 			</div>
@@ -110,10 +111,25 @@
 	<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
 	<script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
 	<script src="js/custom.js"></script>
+	<script>
+		$(document).ready(function(e){
+	
+			$(document).on('click','.submitBtn',function(){
+					var data = $('#contactUs_form').serialize();
+					$.ajax({
+						url:"{{route('contact')}}",
+						type:"POST",
+						data:data,
+						success:function(response){
+							var message = response.message;
+							$('.contactUs-response').removeClass('d-none').addClass('alert alert-success').html(message).fadeOut(5000);
+							
+						}
+					})
+				});
+		});
+	
 
-	<!-- Google Map -->
-    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-    	<script src="js/google-map.js"></script> -->
-
+	</script>
     </body>
     </html>

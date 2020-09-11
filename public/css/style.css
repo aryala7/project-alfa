@@ -623,3 +623,19 @@ a {
 .letter-spacing {
   letter-spacing: .2rem;
   color: rgba(255, 255, 255, 0.5) !important; }
+
+  @font-face {
+    font-family: Shabnam;
+    src: url('fonts/Shabnam/Shabnam.eot');
+    src: url('fonts/Shabnam/Shabnam.eot?#iefix') format('embedded-opentype'),
+    url('fonts/Shabnam/Shabnam.woff') format('woff'),
+    url('fonts/Shabnam/Shabnam.ttf') format('truetype');
+    font-weight: normal;
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}

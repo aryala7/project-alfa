@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+
+use App\Blog;
 use App\Contact;
 use App\Experinces;
 use App\File;
@@ -34,10 +36,12 @@ class HomeController extends Controller
     }
 
     public function MainPage(){
+        $blogs = Blog::all();
         $resume = Experinces::all();
         return view('index')->with([
             'me'=>User::find(1),
-            'resume_items'=>$resume
+            'resume_items'=>$resume,
+            'blogs'=>$blogs->take(3)
         ]);
     }
     public function PersonalInfo(){
@@ -60,6 +64,9 @@ class HomeController extends Controller
             'cellphone',
             'message'
         ]));
+        if($request->ajax()){
+            return response()->json(['message'=>'پیام شما با موفقیت ارسال شد']);
+        }
         $message = 'your masseage has been successfully sent';
         flash($message)->success();
         return back();

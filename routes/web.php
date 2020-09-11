@@ -42,6 +42,7 @@ Route::get('email/verify/{id}/{hash}', 'Auth\VerificationController@verify')->na
 Route::get('email/resend', 'Auth\VerificationController@resend')->name('verification.resend');
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/{id}/blog','BlogController@singleBlog')->name('blog.single');
 Route::group([
     'prefix' => 'admin',
     'middleware'=>'auth'
@@ -69,7 +70,8 @@ Route::group([
     });
     
 });
-Route::post('/1372300109:AAHnwKZBUCNEXe3nzIskV5cSYSUv1E_PgRg/webhook','TelegramController@sendMessage');
+
+Route::post('/1372300109:AAHr9qgFQjaIJE9sj-iYYcBUAW_KHnPGSfk/webhook','TelegramController@sendMessage');
 Route::post('/start','TelegramController@sendMessage');
 
 // Auth::routes();

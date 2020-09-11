@@ -9,23 +9,40 @@ class TelegramController extends Controller
 {
 
     public function sendMessage(){
-        $response = Telegram::setWebhook(['url' => config('telegram.bots.mybot.webhook_url')]);
+        $response = Telegram::setWebhook(['url' => config('telegram.bots.mybot.webhook_url')]);        
         $updates = Telegram::getWebhookUpdates();
-        // $chat_id = $updat  / es['message']['chat']['id'];
-        // $chat = $updates['message']['chat']['text'];
-        // switch($chat){
-        //     case('/salam'):
-        //         $text =  'fuck you and your pepperoni';
-        //     break;
-        //     default:
-        //     $text = 'fuck you';
-
-        // }
-        Telegram::sendMessage([
-            'chat_id'=>81198865,
-            'text'=>'test'
-        ]);
-
+        // $message_id=$updates['message']['id'];
+        $text = $updates['message']['text'];
+        $keyboard = [
+            ['pepperoni'],
+            ['veggie'],
+            ['caprichuza']
+        ];
+        $chat_id = $updates['message']['chat']['id'];
+        switch($text){
+            case('/start'):
+                $letter = 'lets begin psycho!';
+            break;
+            default:
+            $letter = 'you did it is default!';
+        }
+        if($text == '/start'){
+            // $reply_markup = Telegram::replyKeyboardMarkup([
+            //     'keyboard' => $keyboard, 
+            //     'resize_keyboard' => true, 
+            //     'one_time_keyboard' => true
+            // ]);
+            // Telegram::sendPhoto([
+            //     'chat_id'=>$chat_id,
+            //     'photo'=>'public/images/image_1.jpg',
+            //     'caption'=>'this is a fresh pepperoni pizza!'
+            // ]);
+            Telegram::sendMessage([
+                'chat_id'=>$chat_id,
+                'text'=>$letter,
+                // 'reply_markup'=>$reply_markup
+            ]);
+        }
     }
     //
 }
